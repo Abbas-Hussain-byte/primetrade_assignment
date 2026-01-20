@@ -24,17 +24,10 @@ out/
 .env
 .env.*
 !.env.example
-
-# Python
-__pycache__/
-*.pyc
-venv/
-.venv/
-
-# Java
-*.class
-target/
-out/
+.env
+.env.*
+backend/.env
+backend/.env.*
 
 # DB
 *.sqlite
@@ -43,7 +36,6 @@ out/
 
 # Frontend frameworks
 .vite/
-.angular/
 
 # Coverage
 coverage/
