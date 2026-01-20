@@ -138,7 +138,7 @@ const Dashboard = ({ token, setToken }) => {
 
             <section className="content">
                 <h3>{isAdmin ? 'All User Notes' : 'Your Notes'}</h3>
-                {tasks.length > 0 ? (
+                {tasks && tasks.length > 0 ? (
                     <div className="tasks-grid">
                         {tasks.map((task) => (
                             <div key={task._id} className="task-card">
