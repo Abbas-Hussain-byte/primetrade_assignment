@@ -1,0 +1,246 @@
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-dark: #0f172a;
+    --bg-card: rgba(30, 41, 59, 0.7);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --danger: #ef4444;
+    --success: #22c55e;
+    --warning: #f59e0b;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Glassmorphism Card */
+.glass-panel {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #818cf8, #c084fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--glass-border);
+    border-radius: 0.5rem;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: all 0.2s;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: none;
+    font-size: 1rem;
+}
+
+button[type="submit"],
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+button[type="submit"]:hover,
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+button.delete-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+button.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+/* Layout Specifics */
+.auth-container {
+    max-width: 400px;
+    margin: 4rem auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.create-task-section {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.task-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0.5rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.status-in-progress {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+}
+
+.status-completed {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.status-select {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin-bottom: 0;
+    width: auto;
+}
+
+.status-select:disabled {
+    opacity: 0.7;
+    cursor: default;
+    border: none;
+    appearance: none; /* Hide dropdown arrow for read-only feel if desired, though keep it simple */
+}
+
+/* Reuse the color variables for backgrounds of the select */
+.status-select.status-pending {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--warning);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.status-select.status-in-progress {
+    background: rgba(99, 102, 241, 0.2);
+    color: #6366f1; /* slightly brighter for text */
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.status-select.status-completed {
+    background: rgba(34, 197, 94, 0.2);
+    color: var(--success);
+    border-color: rgba(34, 197, 94, 0.3);
+}
