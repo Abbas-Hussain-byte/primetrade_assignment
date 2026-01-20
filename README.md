@@ -1,6 +1,6 @@
-# Full-Stack MERN Task Management Application
+# MERN Task Management Application
 
-A robust full-stack application for managing tasks, built with the MERN stack (MongoDB, Express, React, Node.js). This project demonstrates a production-ready API with Role-Based Access Control (RBAC) and a clean, functional frontend.
+A robust full-stack/backend heavy application for managing tasks, built with the MERN stack (MongoDB, Express, React, Node.js). This project demonstrates a production-ready API with Role-Based Access Control (RBAC) and a clean, functional frontend.
 
 ## 🚀 Features
 
