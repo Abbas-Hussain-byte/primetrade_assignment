@@ -63,11 +63,14 @@ const Dashboard = ({ token, setToken }) => {
     };
 
     const deleteTask = async (id) => {
+        console.log('[Dashboard] Attempting to delete task:', id, 'isAdmin:', isAdmin);
         if (window.confirm('Are you sure you want to delete this task?')) {
             try {
                 await axios.delete(`http://localhost:5000/api/v1/tasks/${id}`, config);
+                console.log('[Dashboard] Delete success');
                 setTasks(tasks.filter((task) => task._id !== id));
             } catch (err) {
+                console.error('[Dashboard] Delete failed:', err);
                 setError(err.response?.data?.message || 'Failed to delete task');
             }
         }

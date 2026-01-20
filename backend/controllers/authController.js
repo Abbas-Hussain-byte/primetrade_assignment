@@ -24,6 +24,15 @@ exports.register = asyncHandler(async (req, res) => {
         throw new Error('User already exists');
     }
 
+    // Check if role is admin and if admin already exists
+    if (role === 'admin') {
+        const adminExists = await User.findOne({ role: 'admin' });
+        if (adminExists) {
+            res.status(400);
+            throw new Error('Admin already exists');
+        }
+    }
+
     // Create user
     // Allow setting role for demonstration purposes (in real app, role might be restricted)
     const user = await User.create({

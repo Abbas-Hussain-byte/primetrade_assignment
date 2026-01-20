@@ -120,9 +120,12 @@ exports.deleteTask = asyncHandler(async (req, res) => {
 
     // User can delete own, Admin can delete any
     if (task.owner.toString() !== req.user.id && req.user.role !== 'admin') {
+        console.log(`[DELETE ERROR] User ${req.user.id} (${req.user.role}) tried to delete task ${task._id} owned by ${task.owner}`);
         res.status(403);
         throw new Error('User not authorized to delete this task');
     }
+
+    console.log(`[DELETE SUCCESS] User ${req.user.id} (${req.user.role}) deleting task ${task._id}`);
 
     await task.deleteOne();
 
